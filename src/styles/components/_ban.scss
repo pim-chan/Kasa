@@ -1,0 +1,26 @@
+.ban {
+    height: 223px;
+    margin: 0 100px;
+    border-radius: 25px;
+    background: url('../../assets/images/img-falaise.png') center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-color2;
+    &__overlay {
+        position: absolute;
+        border-radius: 25px;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.3;
+        z-index: 1;
+    }
+}
+
+.ban h1 {
+    z-index: 2;
+    font-weight: 400;
+    font-size: $title;
+}

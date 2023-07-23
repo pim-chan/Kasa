@@ -1,0 +1,32 @@
+// FONT SIZE
+$title: 3rem;
+$subtitle: 2.25rem;
+$text: 1.5rem;
+$sub-text: 1.125rem;
+$tag-name: 0.875rem;
+
+//COLORS
+$main-color : #FF6060; 
+$secondary-color : #F6F6F6;
+$third-color : #000000;
+$text-color : #FF6060; 
+$text-color2 : #FFFFFF; 
+
+// FONTS
+@font-face {
+    font-family: "Montserrat";
+    src: url(../../src/assets/fonts/Montserrat-Regular.ttf);
+}
+
+$font-1 : "Monserrat", sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-1;
+}
+

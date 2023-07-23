@@ -1,0 +1,15 @@
+.gallery {
+    margin: 43px 100px;
+    padding: 56px 50px;
+    background-color: $secondary-color;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 60px;
+    .card {
+    height: 257px;
+    background: linear-gradient($main-color, $third-color);
+    border-radius: 25px;
+    }
+}
+
