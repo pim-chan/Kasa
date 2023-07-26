@@ -1,8 +1,7 @@
-.ban {
+.banner {
     height: 223px;
     margin: 0 100px;
     border-radius: 25px;
-    background: url('../../assets/images/img-falaise.png') center/cover;
     position: relative;
     display: flex;
     justify-content: center;
@@ -19,7 +18,7 @@
     }
 }
 
-.ban h1 {
+.banner h1 {
     z-index: 2;
     font-weight: 400;
     font-size: $title;

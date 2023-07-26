@@ -1,11 +1,11 @@
 import React from 'react';
-import Cban from '../components/BanHome';
+import Banner from '../components/Banner';
 import Cards from '../components/Card';
 
 const Home = () => {
     return (
         <div>
-          <Cban /> 
+          <Banner title="Chez vous, partout et ailleurs" backgroundImg='./img-falaise.png'/> 
           <Cards/>
         </div>
     );
