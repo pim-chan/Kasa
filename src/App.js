@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
+import Error404 from "./pages/Error404";
 import About from "./pages/About";
 import Layout from "./components/Layout";
+import FicheLogement from "./pages/FicheLogement";
 
 
 const App = () => {
@@ -13,7 +14,8 @@ const App = () => {
                 <Routes>
                     <Route path ="/" element={<Home />}/>
                     <Route path ="/about" element={<About/>}/>
-                    <Route path ="*" element={<NotFound/>}/>
+                    <Route path ="/fiche-logement" element={<FicheLogement/>}/>
+                    <Route path ="*" element={<Error404/>}/>
                 </Routes>
             </Layout>
        </BrowserRouter>

@@ -17,8 +17,13 @@ $text-color2 : #FFFFFF;
     font-family: "Montserrat";
     src: url(../../src/assets/fonts/Montserrat-Regular.ttf);
 }
+@font-face {
+    font-family: "Montserrat-thin";
+    src: url(../../src/assets/fonts/Montserrat-Thin.ttf);
+}
 
-$font-1 : "Monserrat", sans-serif;
+$font1 : "Monserrat", sans-serif;
+$font1-thin : "Montserrat-thin", sans-serif;
 
 * {
     padding: 0;
@@ -27,6 +32,6 @@ $font-1 : "Monserrat", sans-serif;
 }
 
 body {
-    font-family: $font-1;
+    font-family: $font1;
 }
 

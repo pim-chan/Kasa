@@ -1,0 +1,27 @@
+.text-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $main-color;
+}
+
+.text-error {
+    &__title {
+        font-size: 288px;
+    }
+    &__subtitle {
+        font-size: 36px;
+        margin-top: 66px;
+
+    }
+}
+
+.link-homepage {
+    margin: 150px 0;
+    font-size: $sub-text;
+    &:visited {
+        color: $main-color;
+    }
+}
+

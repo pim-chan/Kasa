@@ -1,9 +1,10 @@
 import React from 'react';
+import TemplateFicheLogement from '../components/TemplateFicheLogement';
 
 const FicheLogement = () => {
     return (
-        <div>
-            <h1>jour</h1>
+        <div>   
+            <TemplateFicheLogement/>
         </div>
     );
 };

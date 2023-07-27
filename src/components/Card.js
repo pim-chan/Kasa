@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 
 const Card = () => {
@@ -14,11 +15,11 @@ const Card = () => {
         const firstSixLocations = dataLocations.slice(0, 6);
 
         return firstSixLocations.map((location) => (
-            <div key={location.id} className="card">
+            <Link to='/fiche-logement' key={location.id} className="card" >
                 <img src={location.cover} alt="photo location appartement" />
                 <div className="card__overlay"></div>
                 <h2>{location.title}</h2>
-            </div>
+            </Link>
         ));
     };
 
