@@ -1,15 +1,15 @@
 import React from 'react';
 import DataLocations from '../assets/locations.json'
 
-const Host = (hostPhoto) => {
+const Host = () => {
     const host = DataLocations[0].host;
-    const hostPhotoStyle = {background : `url(${hostPhoto}) center/cover`};
     return (
-        <div>
-            <div className="hostName">
+        <div className='host'>
+            <div className="host__name">
                 <p>{host.name}</p>
             </div>
-            <div className="hostPhoto" style={hostPhotoStyle}>
+            <div className="host__photo">
+                <img src={host.picture} alt={`Photo host ${host.name}`} />
             </div> 
         </div>
     );

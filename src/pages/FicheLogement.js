@@ -7,12 +7,12 @@ import Dropdown from '../components/Dropdown';
 import Host from '../components/Host';
 
 const FicheLogement = () => {
-    const images = DataLocations[0].pictures;
+    const imagesCarrousel = DataLocations[0].pictures;
     const equipements = DataLocations[0].equipments;
     const hostPhoto = DataLocations[0].host.picture;
     return (
         <div>
-            <Carrousel images={images}/>
+            <Carrousel images={imagesCarrousel}/>
             <div className="location-host__container">
                 <TitleFicheLogement/>
                 <Host hostPhoto = {hostPhoto}/>

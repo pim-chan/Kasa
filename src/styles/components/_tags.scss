@@ -1,11 +1,12 @@
 .tags {
     display: flex;
-    margin: 30px 100px 18px;
+    margin: 23px 100px;
     gap: 15px;
+    font-size: $tag-name;
     .tag {
         padding: 5px 45px;
         background-color: $main-color;
         color: $text-color2;
-        border-radius: 13px;
+        border-radius: 10px;
     }
 }
