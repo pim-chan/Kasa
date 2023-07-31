@@ -1,21 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import axios from "axios";
+import React from 'react';
 import { Link } from 'react-router-dom';
+import DataLocations from '../assets/locations.json';
 
 
-const Card = () => {
-    const [dataLocations, setDataLocations] = useState([]);
-    useEffect(() => {
-        axios
-          .get("https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json")
-          .then((res) => setDataLocations(res.data));
-      }, []);
+const Card = () => { 
     
     const renderCards = () => {
-        const firstSixLocations = dataLocations.slice(0, 6);
+        const firstSixLocations = DataLocations.slice(0, 6);
 
         return firstSixLocations.map((location) => (
-            <Link to='/fiche-logement' key={location.id} className="card" >
+            <Link to={`/fiche-logement/${location.id}`} key={location.id}className="card" >
                 <img src={location.cover} alt="photo location appartement" />
                 <div className="card__overlay"></div>
                 <h2>{location.title}</h2>

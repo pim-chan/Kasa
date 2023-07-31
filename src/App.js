@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import FicheLogement from "./pages/FicheLogement";
 
 
+
 const App = () => {
     return (
        <BrowserRouter>
@@ -14,7 +15,7 @@ const App = () => {
                 <Routes>
                     <Route path ="/" element={<Home />}/>
                     <Route path ="/about" element={<About/>}/>
-                    <Route path ="/fiche-logement" element={<FicheLogement/>}/>
+                    <Route path ={`/fiche-logement/:id`} element={<FicheLogement/>}/>
                     <Route path ="*" element={<Error404/>}/>
                 </Routes>
             </Layout>
@@ -23,3 +24,7 @@ const App = () => {
 };
 
 export default App;
+
+
+
+

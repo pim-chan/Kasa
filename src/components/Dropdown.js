@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import arrowDropdown from '../assets/images/arrow.svg'
 
 const Dropdown = ({ title, dropdownText }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,14 +11,13 @@ const Dropdown = ({ title, dropdownText }) => {
   };
   
     return (
-      <div className="dropdown">
+      <div className={`dropdown ${isOpen ? 'open' : ''}`}>
         <div className="dropdown__title-container">
             <h3>{title}</h3>
-            <img src="./arrow.svg" alt="flèche dropdown" className= {`dropdown__arrow-trigger ${isArrowRotated ? 'dropdown__arrow-trigger--rotated' : ''}`} onClick={toggleDropdown}/>
+            <img src={arrowDropdown} alt="flèche dropdown" className= {`dropdown__arrow-trigger ${isArrowRotated ? 'dropdown__arrow-trigger--rotated' : ''}`} onClick={toggleDropdown}/>
         </div>
-        {/* <div className= {`dropdown__text-container ${isOpen ? 'dropdown__text-container--open' : ''}`} onClick={toggleDropdown}></div> */}
         {isOpen && (
-            <div className="dropdown__text-container dropdown__text-container--open">
+            <div className={`dropdown__text-container ${isOpen ? 'show' : ''}`}>
                 <p>{dropdownText}</p>
             </div>
         )}
