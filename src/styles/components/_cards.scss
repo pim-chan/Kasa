@@ -10,7 +10,6 @@
     .card {
         position: relative;  
         height: 290px;
-        background: linear-gradient($main-color, $third-color);
         border-radius: 10px;
         }
 }
@@ -42,3 +41,13 @@
 
 }
 
+@media (max-width: 767.98px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        margin: 22px auto;
+        background-color: $text-color2;
+        padding: 0;
+        width: 90%;
+    }
+}

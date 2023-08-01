@@ -25,3 +25,20 @@
     }
 }
 
+@media (max-width: 767.98px) {
+    .text-error {
+        &__title {
+            font-size: 96px;
+            margin-top:150px;
+        }
+        &__subtitle {
+            font-size: 18px;
+            margin-top: 11px;
+            width: 200px;
+            line-height: 25px;
+            text-align: center;
+        }
+    }
+
+}
+

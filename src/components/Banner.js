@@ -7,7 +7,7 @@ const Banner = ({title, backgroundImg}) => {
     return (
         <div className='banner' style={bannerStyle}>
             <div className="banner__overlay"></div>
-            <h1>{title}</h1>
+            <h1 className='banner__title'>{title}</h1>
         </div>
     );
 };

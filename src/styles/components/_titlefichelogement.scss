@@ -9,3 +9,17 @@
         font-size: $sub-text;
     }
 }
+
+@media (max-width: 767.98px) {
+    .fl__text {
+        gap: 5px;
+        .fl__title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .fl__localisation {
+            font-size: 12px;
+        }
+    }
+
+}

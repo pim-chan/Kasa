@@ -5,7 +5,7 @@ const Tags = () => {
     const dataLocationsTags = DataLocations[0].tags;
 
     return (
-        <div className='tags'>
+        <div className='tags__container'>
             {dataLocationsTags.map((tag, id) => (
                 <p key={id} className='tag'>{tag}</p>
             ))}
