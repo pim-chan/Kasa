@@ -11,7 +11,7 @@ const Dropdown = ({ title, dropdownText }) => {
   };
   
     return (
-      <div className={`dropdown ${isOpen ? 'open' : ''}`}>
+      <div className="dropdown">
         <div className="dropdown__title-container">
             <h3>{title}</h3>
             <img src={arrowDropdown} alt="flèche dropdown" className= {`dropdown__arrow-trigger ${isArrowRotated ? 'dropdown__arrow-trigger--rotated' : ''}`} onClick={toggleDropdown}/>

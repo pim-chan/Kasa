@@ -9,6 +9,8 @@
         align-items: center;
         border-radius: 10px;
         background-color: $main-color;
+        z-index:10;
+        position: relative;
     }
 }
 
@@ -25,16 +27,41 @@
     line-height: 25px;
     border-radius: 0 0 5px 5px;
     background-color: $secondary-color;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out, 
-    opacity 0.3s ease-in-out;
+    z-index:1;
+    position: relative;
 }
 
+/* Définit les étapes de l'animation */
+@keyframes slide-in {
+    /* Étape 0% : la div est en dehors de l'écran (position de départ) */
+    0% {
+      opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 .dropdown__text-container.show {
-  max-height: 400px;
-  opacity: 1;
+  /* Définit la position de départ en dehors de l'écran (peut être adaptée selon la direction de l'animation) */
+  transform: translateY(-50%);
+  /* Définit la durée de l'animation */
+  animation-duration: 0.5s;
+  /* Définit le type d'interpolation de l'animation */
+  animation-timing-function: ease-in-out;
+  /* Définit le nom de l'animation */
+  animation-name: slide-in;
+  /* Définit si l'animation doit être répétée et combien de fois */
+  animation-iteration-count: 1;
+  /* Définit que l'animation doit conserver les propriétés finales après son exécution */
+  animation-fill-mode: forwards;
   ul {
       list-style: none; 
     }
@@ -64,6 +91,7 @@
     gap: 65px;
     .dropdown__title-container {
         height: 52px;    
+        
         h3 {
         color: $text-color2;
         font-family: $font1-light;
