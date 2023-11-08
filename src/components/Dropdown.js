@@ -7,22 +7,23 @@ const Dropdown = ({ title, dropdownText }) => {
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    setIsArrowRotated(!isArrowRotated);
+    setIsArrowRotated(!isOpen);
   };
   
-    return (
-      <div className="dropdown">
-        <div className="dropdown__title-container">
-            <h3>{title}</h3>
-            <img src={arrowDropdown} alt="flèche dropdown" className= {`dropdown__arrow-trigger ${isArrowRotated ? 'dropdown__arrow-trigger--rotated' : ''}`} onClick={toggleDropdown}/>
-        </div>
-        {isOpen && (
-            <div className={`dropdown__text-container ${isOpen ? 'show' : ''}`}>
-                <p>{dropdownText}</p>
-            </div>
-        )}
+  return (
+    <div className="dropdown">
+      <div className="dropdown__title-container">
+        <h3>{title}</h3>
+        <img src={arrowDropdown} 
+          alt="flèche dropdown" 
+          className={`dropdown__arrow ${isArrowRotated ? 'dropdown__arrow--rotated' : ''}`} 
+          onClick={toggleDropdown} />
       </div>
-    );
-  };
+      <div className={`dropdown__text-container ${isOpen ? 'show' : 'hide'}`}>
+        <p>{dropdownText}</p>
+      </div>
+    </div>
+  );
+};
   
 export default Dropdown;

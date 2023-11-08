@@ -1,6 +1,5 @@
 .dropdown {
     width: 70%;
-    min-height: 0;
     color: $main-color;
     &__title-container {
         padding: 0 20px 0 10px;
@@ -14,14 +13,14 @@
     }
 }
 
-.dropdown__arrow-trigger {
+.dropdown__arrow {
    transition: transform 0.3s ease;
    &--rotated {
         transform: rotate(180deg);
     }
 }
+
 .dropdown__text-container {
-    padding: 20px 15px;
     font-family: $font1-thin;
     font-weight: bold;
     line-height: 25px;
@@ -29,43 +28,68 @@
     background-color: $secondary-color;
     z-index:1;
     position: relative;
+    max-height: 0;
+    p {
+        padding: 15px;
+    }
 }
 
-/* Définit les étapes de l'animation */
+/* Animation */
 @keyframes slide-in {
-    /* Étape 0% : la div est en dehors de l'écran (position de départ) */
+
     0% {
-      opacity: 0;
-    }
-    10% {
         opacity: 0;
+        max-height: 0;
     }
-    15% {
-        opacity: 1;
+    5% {
+        opacity: 0;
+        max-height: 0;
     }
     100% {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 100%;
     }
   }
 
 .dropdown__text-container.show {
-  /* Définit la position de départ en dehors de l'écran (peut être adaptée selon la direction de l'animation) */
-  transform: translateY(-50%);
-  /* Définit la durée de l'animation */
-  animation-duration: 0.5s;
-  /* Définit le type d'interpolation de l'animation */
-  animation-timing-function: ease-in-out;
-  /* Définit le nom de l'animation */
-  animation-name: slide-in;
-  /* Définit si l'animation doit être répétée et combien de fois */
-  animation-iteration-count: 1;
-  /* Définit que l'animation doit conserver les propriétés finales après son exécution */
-  animation-fill-mode: forwards;
-  ul {
-      list-style: none; 
-    }
+    transform: translateY(-40%);
+    max-height: 100%;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-name: slide-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
+
+/* Définit les étapes de l'animation de sortie */
+@keyframes slide-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 100%;
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-40%);
+        max-height: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40%);
+        max-height: 0;
+      }
+}
+
+.dropdown__text-container.hide {
+    max-height: 0;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-name: slide-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 
 // ABOUT
 .a-dropdowns-container {
@@ -103,6 +127,12 @@
 @media (max-width: 767.98px) {
     .dropdown {
         width: 90%;
+        &__text-container {
+        font-size: $resp-subtextdrop;
+        }
+        &__title-container {
+        font-size: $resp-textdrop;
+        }
     }
 
     .fl-dropdowns-container {
