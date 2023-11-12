@@ -21,6 +21,7 @@ const FicheLogement = () => {
     if (filteredData.length === 0) {
         return <Navigate to="/error-404"/>;
     }
+    
 
     return (
         <div>
@@ -36,9 +37,14 @@ const FicheLogement = () => {
                 </div>
             </div>
             <div className="fl-dropdowns-container">
-                <Dropdown className=" dropdown fl-dropdown" title={"Description"} dropdownText={description}/>
-                <Dropdown className=" dropdown fl-dropdown" title={"Équipements"} dropdownText={<ul>{equipements.map((equipement, id) => (<li key={id} className='equipement'>{equipement}</li>))}
-                </ul>}/>
+                <Dropdown className=" dropdown fl-dropdown" 
+                title={"Description"} 
+                dropdownText={description}
+                />
+                <Dropdown 
+                className=" dropdown fl-dropdown" 
+                title={"Équipements"} 
+                dropdownText={<ul>{equipements.map((equipement, id) => (<li key={id} className='equipement'>{equipement}</li>))}</ul>}/>
             </div>
         </div>
     );

@@ -22,7 +22,7 @@
 
 @media (max-width: 767.98px) {
     .navigation a {
-        font-size: 12px;
+        font-size: $resp-subtext;
         text-transform: uppercase;
     }
     .navigation ul {

@@ -4,10 +4,12 @@ import arrowDropdown from '../assets/images/arrow.svg'
 const Dropdown = ({ title, dropdownText }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isArrowRotated, setIsArrowRotated] = useState(false);
+  const [hasClicked, setHasClicked] = useState(false);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-    setIsArrowRotated(!isOpen);
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+    setIsArrowRotated((prevIsOpen) => !prevIsOpen);
+    setHasClicked(true);
   };
   
   return (
@@ -19,8 +21,8 @@ const Dropdown = ({ title, dropdownText }) => {
           className={`dropdown__arrow ${isArrowRotated ? 'dropdown__arrow--rotated' : ''}`} 
           onClick={toggleDropdown} />
       </div>
-      <div className={`dropdown__text-container ${isOpen ? 'show' : 'hide'}`}>
-        <p>{dropdownText}</p>
+      <div className={`dropdown__text-container ${hasClicked ? (isOpen ? 'show' : 'hide') : ''}`}>
+        <div className={`dropdown__text`}>{dropdownText}</div>
       </div>
     </div>
   );

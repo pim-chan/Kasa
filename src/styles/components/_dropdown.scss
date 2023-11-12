@@ -8,7 +8,7 @@
         align-items: center;
         border-radius: 10px;
         background-color: $main-color;
-        z-index:10;
+        z-index: 10;
         position: relative;
     }
 }
@@ -26,68 +26,63 @@
     line-height: 25px;
     border-radius: 0 0 5px 5px;
     background-color: $secondary-color;
-    z-index:1;
-    position: relative;
     max-height: 0;
-    p {
-        padding: 15px;
+    overflow: hidden;
+    ul {
+        list-style: none;
     }
 }
 
-/* Animation */
-@keyframes slide-in {
+.dropdown__text {
+    padding: 20px 10px;
+}
 
+
+/* Animation de d'ouverture */
+.dropdown__text-container.show {
+    animation: slide-in 0.5s ease-in-out 1 forwards;
+}
+
+.dropdown__text-container.hide {
+    animation : slide-out 0.5s ease-in-out 1 forwards;
+    
+}
+
+/* Animation de d'ouverture */
+@keyframes slide-in {
     0% {
         opacity: 0;
-        max-height: 0;
+        transform: translateY(-10px);
+
     }
-    5% {
-        opacity: 0;
-        max-height: 0;
+    60% {
+        opacity: 1;
+        transform: translateY(0px);
+
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
         max-height: 100%;
     }
   }
 
-.dropdown__text-container.show {
-    transform: translateY(-40%);
-    max-height: 100%;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-name: slide-in;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
 
-/* Définit les étapes de l'animation de sortie */
+/* Animation de fermeture */
 @keyframes slide-out {
     0% {
         opacity: 1;
-        transform: translateY(0);
-        max-height: 100%;
+        transform: translateY(0px);
+        max-height: fit-content;
     }
-    50% {
+    60% {
         opacity: 0;
-        transform: translateY(-40%);
-        max-height: 0;
+        transform: translateY(-10px);
     }
-    100% {
+    100%{
         opacity: 0;
-        transform: translateY(-40%);
         max-height: 0;
-      }
-}
-
-.dropdown__text-container.hide {
-    max-height: 0;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-name: slide-out;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+        transform: translateY(-10px);
+    }
 }
 
 
@@ -115,7 +110,6 @@
     gap: 65px;
     .dropdown__title-container {
         height: 52px;    
-        
         h3 {
         color: $text-color2;
         font-family: $font1-light;
@@ -124,14 +118,15 @@
     }
 }
 
+
 @media (max-width: 767.98px) {
     .dropdown {
         width: 90%;
         &__text-container {
-        font-size: $resp-subtextdrop;
+        font-size: $resp-subtext;
         }
         &__title-container {
-        font-size: $resp-textdrop;
+        font-size: $resp-text;
         }
     }
 
@@ -146,7 +141,7 @@
         .dropdown__title-container { 
             height: 30px;
             h3 {
-            font-size: 13px;
+            font-size: $resp-text;
             }
         }
     }
@@ -156,7 +151,7 @@
         .dropdown__title-container {
             height: 30px;  
             h3 {
-                font-size: 13px;
+                font-size: $resp-text;
             }
         }
     }

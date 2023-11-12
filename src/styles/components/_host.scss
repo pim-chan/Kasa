@@ -22,7 +22,7 @@
     .host {
         gap: 0;
         .host__name {
-            font-size: 12px;
+            font-size: $resp-subtext;
         }
         .host__photo {
             width: 32px;

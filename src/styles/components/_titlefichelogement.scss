@@ -14,11 +14,11 @@
     .fl__text {
         gap: 5px;
         .fl__title {
-            font-size: 18px;
+            font-size: $resp-subtitle;
             margin-bottom: 5px;
         }
         .fl__localisation {
-            font-size: 12px;
+            font-size: $resp-subtext;
         }
     }
 

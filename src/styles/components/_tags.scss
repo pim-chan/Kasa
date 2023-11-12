@@ -13,7 +13,7 @@
 
 @media (max-width: 767.98px) {
     .tags__container {
-        font-size: 10px;
+        font-size: $resp-tag-name;
         font-family: $font1-light;
         margin: 10px 0;
         .tag {
