@@ -1,11 +1,11 @@
 import React from 'react';
-import Logo from "./Logo";
-import Navigation from './Navigation';
+import Navigation from '../components/Navigation';
+import Logo from '../assets/images/logo.png'
 
 const Header = () => {
     return (
         <div className='header'>
-            <Logo />
+            <img src={Logo} alt="logo Kasa" className='logo'/>
             <Navigation />
         </div>
     );

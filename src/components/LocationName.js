@@ -1,7 +1,7 @@
 import React from 'react';
 import DataLocations from '../assets/locations.json'
 
-const TitleFicheLogement = () => {
+const LocationName = () => {
     const dataLocations = DataLocations[0];
     return (
         <div className='fl__text'>
@@ -11,4 +11,4 @@ const TitleFicheLogement = () => {
     );
 };
 
-export default TitleFicheLogement;
+export default LocationName;

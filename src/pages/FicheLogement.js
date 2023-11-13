@@ -2,15 +2,14 @@ import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import DataLocations from '../assets/locations.json'
 import Carrousel from '../components/Carrousel';
-import TitleFicheLogement from '../components/TitleFicheLogement';
+import LocationName from  '../components/LocationName'
 import Tags from '../components/Tags';
 import Dropdown from '../components/Dropdown';
 import Host from '../components/Host';
 import Rating from '../components/Rating';
 
 const FicheLogement = () => {
-    const { id } = useParams(); // Récupère l'ID à partir des paramètres de l'URL
-    // etiquette = :id
+    const { id } = useParams(); 
 
     const imagesCarrousel = DataLocations[0].pictures;
     const equipements = DataLocations[0].equipments;
@@ -21,18 +20,17 @@ const FicheLogement = () => {
     if (filteredData.length === 0) {
         return <Navigate to="/error-404"/>;
     }
-    
 
     return (
         <div>
             <Carrousel images={imagesCarrousel}/>
             <div className="location-infos">
                 <div className="title-tags__container">
-                    <TitleFicheLogement/>
+                    <LocationName/>
                     <Tags/>
                 </div>
                 <div className="host-rating_container">
-                    <Host hostPhoto = {hostPhoto}/>
+                    <Host hostPhoto ={hostPhoto}/>
                     <Rating/>
                 </div>
             </div>
@@ -42,9 +40,10 @@ const FicheLogement = () => {
                 dropdownText={description}
                 />
                 <Dropdown 
-                className=" dropdown fl-dropdown" 
+                className="dropdown fl-dropdown" 
                 title={"Équipements"} 
-                dropdownText={<ul>{equipements.map((equipement, id) => (<li key={id} className='equipement'>{equipement}</li>))}</ul>}/>
+                dropdownText={<ul>{equipements.map((equipement, id) => (<li key={id} 
+                className='equipement'>{equipement}</li>))}</ul>}/>
             </div>
         </div>
     );
