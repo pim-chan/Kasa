@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Kasa/static/css/main.3778fcab.css",
+    "main.js": "/Kasa/static/js/main.becceb4f.js",
+    "static/media/Montserrat-Regular.ttf": "/Kasa/static/media/Montserrat-Regular.ceb11275ab638627a643.ttf",
+    "static/media/Montserrat-ExtraLight.ttf": "/Kasa/static/media/Montserrat-ExtraLight.ef3c777f702c89a0f300.ttf",
+    "static/media/Montserrat-Thin.ttf": "/Kasa/static/media/Montserrat-Thin.413b6b9f23ece3b343a7.ttf",
+    "static/media/star-active.svg": "/Kasa/static/media/star-active.3d4af16550d68403347ec9c79f4a4bef.svg",
+    "static/media/star-inactive.svg": "/Kasa/static/media/star-inactive.266f8966517bbaf33c447d7cddff5859.svg",
+    "index.html": "/Kasa/index.html",
+    "static/media/arrow.svg": "/Kasa/static/media/arrow.c85a74454e05f2764a3f572692fa183e.svg",
+    "main.3778fcab.css.map": "/Kasa/static/css/main.3778fcab.css.map",
+    "main.becceb4f.js.map": "/Kasa/static/js/main.becceb4f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3778fcab.css",
+    "static/js/main.becceb4f.js"
+  ]
+}
