@@ -5,7 +5,7 @@ import Cards from '../components/Card';
 const Home = () => {
     return (
         <div>
-          <Banner title="Chez vous, partout et ailleurs" backgroundImg='./img-falaise.png'/> 
+          <Banner/> 
           <Cards/>
         </div>
     );

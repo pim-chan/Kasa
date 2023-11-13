@@ -9,7 +9,7 @@ const Card = () => {
         const firstSixLocations = DataLocations.slice(0, 6);
 
         return firstSixLocations.map((location) => (
-            <Link to={`/fiche-logement/${location.id}`} key={location.id}className="card" >
+            <Link to={`/location-page/${location.id}`} key={location.id}className="card" >
                 <img src={location.cover} alt="photo location appartement" />
                 <div className="card__overlay"></div>
                 <h2>{location.title}</h2>

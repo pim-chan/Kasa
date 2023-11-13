@@ -57,6 +57,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
+  background: url(../../../public/img-falaise.png) center/cover;
 }
 .banner__overlay {
   position: absolute;
@@ -189,15 +190,15 @@ body {
   font-size: 1.5rem;
 }
 
-.fl-dropdowns-container {
+.lp-dropdowns-container {
   margin: 0 100px 42px;
   display: flex;
   gap: 65px;
 }
-.fl-dropdowns-container .dropdown__title-container {
+.lp-dropdowns-container .dropdown__title-container {
   height: 52px;
 }
-.fl-dropdowns-container .dropdown__title-container h3 {
+.lp-dropdowns-container .dropdown__title-container h3 {
   color: #FFFFFF;
   font-family: "Montserrat-light", sans-serif;
   font-size: 1.125rem;
@@ -213,19 +214,19 @@ body {
   .dropdown__title-container {
     font-size: 0.813rem;
   }
-  .fl-dropdowns-container {
+  .lp-dropdowns-container {
     margin: 0 auto 20px;
     flex-direction: column;
     width: 90%;
     gap: 20px;
   }
-  .fl-dropdowns-container .dropdown {
+  .lp-dropdowns-container .dropdown {
     width: 100%;
   }
-  .fl-dropdowns-container .dropdown__title-container {
+  .lp-dropdowns-container .dropdown__title-container {
     height: 30px;
   }
-  .fl-dropdowns-container .dropdown__title-container h3 {
+  .lp-dropdowns-container .dropdown__title-container h3 {
     font-size: 0.813rem;
   }
   .a-dropdowns-container {

@@ -2,13 +2,13 @@ import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import DataLocations from '../assets/locations.json'
 import Carrousel from '../components/Carrousel';
-import LocationName from  '../components/LocationName'
+import LocationName from  '../components/LocationName';
 import Tags from '../components/Tags';
 import Dropdown from '../components/Dropdown';
 import Host from '../components/Host';
 import Rating from '../components/Rating';
 
-const FicheLogement = () => {
+const LocationPage = () => {
     const { id } = useParams(); 
 
     const imagesCarrousel = DataLocations[0].pictures;
@@ -34,13 +34,13 @@ const FicheLogement = () => {
                     <Rating/>
                 </div>
             </div>
-            <div className="fl-dropdowns-container">
-                <Dropdown className=" dropdown fl-dropdown" 
+            <div className="lp-dropdowns-container">
+                <Dropdown className=" dropdown lp-dropdown" 
                 title={"Description"} 
                 dropdownText={description}
                 />
                 <Dropdown 
-                className="dropdown fl-dropdown" 
+                className="dropdown lp-dropdown" 
                 title={"Équipements"} 
                 dropdownText={<ul>{equipements.map((equipement, id) => (<li key={id} 
                 className='equipement'>{equipement}</li>))}</ul>}/>
@@ -49,7 +49,7 @@ const FicheLogement = () => {
     );
 };
 
-export default FicheLogement;
+export default LocationPage;
 
 
 

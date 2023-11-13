@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Error404 from "./pages/Error404";
 import About from "./pages/About";
 import Layout from "./layout/Layout";
-import FicheLogement from "./pages/FicheLogement";
+import LocationPage from "./pages/LocationPage";
 
 
 
@@ -15,7 +15,7 @@ const App = () => {
                 <Routes>
                     <Route path ="/" element={<Home />}/>
                     <Route path ="/about" element={<About/>}/>
-                    <Route path ={`/fiche-logement/:id`} element={<FicheLogement/>}/>
+                    <Route path ={`/location-page/:id`} element={<LocationPage/>}/>
                     <Route path ="*" element={<Error404/>}/>
                 </Routes>
             </Layout>
