@@ -1,10 +1,8 @@
 import React from 'react';
-import dataLocations from '../assets/locations.json';
 import StarActive from '../assets/images/star-active.svg';
 import StarInactive from '../assets/images/star-inactive.svg';
 
-const Rating = () => {
-  const rating = dataLocations[0].rating;
+const Rating = ({rating}) => {;
   const totalStars = 5;
 
   const renderStars = () => {

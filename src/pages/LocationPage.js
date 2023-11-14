@@ -2,36 +2,43 @@ import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import DataLocations from '../assets/locations.json'
 import Carrousel from '../components/Carrousel';
-import LocationName from  '../components/LocationName';
 import Tags from '../components/Tags';
 import Dropdown from '../components/Dropdown';
 import Host from '../components/Host';
 import Rating from '../components/Rating';
 
 const LocationPage = () => {
-    const { id } = useParams(); 
-
-    const imagesCarrousel = DataLocations[0].pictures;
-    const equipements = DataLocations[0].equipments;
-    const hostPhoto = DataLocations[0].host.picture;
-    const description = DataLocations[0].description;
-
-    const filteredData = DataLocations.filter(item => item.id === id);
-    if (filteredData.length === 0) {
+    const idLocation = useParams('id').id; 
+    
+    const CurrentDataLocation = DataLocations.filter(item => item.id === idLocation);
+    if (CurrentDataLocation.length === 0) {
         return <Navigate to="/error-404"/>;
     }
 
+    const currentData = CurrentDataLocation[0]
+    console.log(currentData);
+    const equipements = currentData.equipments;
+    const hostPhoto = currentData.host.picture;
+    const hostName = currentData.host.name;
+    const description = currentData.description;
+    const tags = currentData.tags;
+    const rating = currentData.rating;
+    const pictures = currentData.pictures;
+
     return (
         <div>
-            <Carrousel images={imagesCarrousel}/>
+            <Carrousel pictures={pictures}/>
             <div className="location-infos">
                 <div className="title-tags__container">
-                    <LocationName/>
-                    <Tags/>
+                    <div className='lp__text'>
+                    <h1 className='lp__title'>{currentData.title}</h1>
+                    <h2 className='lp__localisation'>{currentData.location}</h2>
+                </div>
+                    <Tags tags={tags}/>
                 </div>
                 <div className="host-rating_container">
-                    <Host hostPhoto ={hostPhoto}/>
-                    <Rating/>
+                    <Host hostPhoto={hostPhoto} hostName={hostName}/>
+                    <Rating rating={rating}/>
                 </div>
             </div>
             <div className="lp-dropdowns-container">

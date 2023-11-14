@@ -1,15 +1,13 @@
 import React from 'react';
-import DataLocations from '../assets/locations.json'
 
-const Host = () => {
-    const host = DataLocations[0].host;
+const Host = ({hostPhoto, hostName}) => {
     return (
         <div className='host'>
             <div className="host__name">
-                <p>{host.name}</p>
+                <p>{hostName}</p>
             </div>
             <div className="host__photo">
-                <img src={host.picture} alt={`Photo host ${host.name}`} />
+                <img src={hostPhoto} alt={`Photo host de ${hostName}`} />
             </div> 
         </div>
     );
