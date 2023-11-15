@@ -3,7 +3,7 @@ import ArrowRightImage from '../assets/images/arrow_right.png';
 import ArrowLeftImage from '../assets/images/arrow_left.png';
 
 const Carrousel = ({pictures}) => {
-  const [currentSlide, setCurrentSlide] = useState(0) // Indice de l'image affichée = 0
+  const [currentSlide, setCurrentSlide] = useState(0) // Indice de l'image affichée/ première image = 0
 
     // Afficher le slide suivant
     const nextSlide = () => {
