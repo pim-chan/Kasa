@@ -5,6 +5,7 @@ const Navigation = () => {
     return (
         <div className='navigation'>
             <ul>
+                {/* Liens nav + ternaire pour injecter la classe "nav-active" sur lien cliqué */}
                 <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
                     <li>Accueil</li>
                 </NavLink>

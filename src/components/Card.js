@@ -6,8 +6,9 @@ import DataLocations from '../assets/locations.json';
 const Card = () => { 
     
     const renderCards = () => {
-        const firstSixLocations = DataLocations.slice(0, 6);
+        const firstSixLocations = DataLocations.slice(0, 6); // Prend les six premières locations de Datalocations (fichier json)
 
+        // Création carte firstSixLocations + lien (Link) vers page basée sur l'ID de la location.
         return firstSixLocations.map((location) => (
             <Link to={`/location-page/${location.id}`} key={location.id} className="card" >
                 <img src={location.cover} alt="photo location appartement" />
@@ -18,6 +19,7 @@ const Card = () => {
     };
 
     return (
+        // Rend la galerie de cartes dans la gallerie
         <div className="gallery">
             {renderCards()}
         </div>

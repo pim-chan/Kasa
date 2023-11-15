@@ -1,29 +1,22 @@
 import React, { useState } from 'react';
 import ArrowRightImage from '../assets/images/arrow_right.png';
 import ArrowLeftImage from '../assets/images/arrow_left.png';
-// import DataLocations from '../assets/locations.json'
-// import { useParams } from 'react-router-dom';
 
 const Carrousel = ({pictures}) => {
+  const [currentSlide, setCurrentSlide] = useState(0) // Indice de l'image affichée = 0
 
-  const [currentSlide, setCurrentSlide] = useState(0)
-  // const idLocation = useParams('id').id;
-    
-  // const CurrentDataLocation = DataLocations.filter(item => item.id === idLocation);
-
-  // const currentData = CurrentDataLocation[0]
-  // const pictures = currentData.pictures;
-
+    // Afficher le slide suivant
     const nextSlide = () => {
       setCurrentSlide(currentSlide + 1)
-      if(currentSlide === pictures.length - 1)
-      setCurrentSlide(0)
+      if(currentSlide === pictures.length - 1) // Vérification indice currentSlide = dernière page. 
+      setCurrentSlide(0) // Si oui, affiche première page.
     }
 
+    // Afficher le slide précédent
     const prevSlide = () => {
       setCurrentSlide(currentSlide - 1)
-      if(currentSlide === 0)
-      setCurrentSlide(pictures.length - 1)
+      if(currentSlide === 0) // Vérification indice currentSlide = première page. 
+      setCurrentSlide(pictures.length - 1) // Si oui, affiche dernière page.
     }
   
   return (
@@ -40,11 +33,13 @@ const Carrousel = ({pictures}) => {
         className="arrow arrow-right" 
         onClick={nextSlide}
       />
+      {/* Affiche image = indice actuel (currentSlide) dans le tableau pictures. */}
       <img
         src={pictures[currentSlide]}
         alt={`Image ${pictures[currentSlide]}`}
         className="carrousel__img"
       />
+       {/* Affiche num diapositive actuelle (+ 1 car indice commence à 0) + nombre total images dans le carrousel (pictures) */}
       <div className="slide-count">
         <p>{currentSlide + 1}/{pictures.length}</p>
       </div>

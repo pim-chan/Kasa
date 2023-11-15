@@ -8,13 +8,16 @@ import Host from '../components/Host';
 import Rating from '../components/Rating';
 
 const LocationPage = () => {
-    const idLocation = useParams('id').id; 
+    const idLocation = useParams().id; // Extrait l'id de l'URL
     
+    // Extrait données DataLocations = Id de la location (idLocation)
     const CurrentDataLocation = DataLocations.filter(item => item.id === idLocation);
+    // Si aucune donnée -> redirection vers page erreur
     if (CurrentDataLocation.length === 0) {
         return <Navigate to="/error-404"/>;
     }
 
+    // Extraction des données nécéssaires pour la fiche logement
     const currentData = CurrentDataLocation[0]
     console.log(currentData);
     const equipements = currentData.equipments;

@@ -6,12 +6,27 @@ const Rating = ({rating}) => {;
   const totalStars = 5;
 
   const renderStars = () => {
-    const stars = [];
+    const stars = []; // Créer tableau images étoiles
+
+    // Iteration jusqu'à 5 (totalStars)
     for (let i = 1; i <= totalStars; i++) {
+      // Si i est inférieur à la rating, affiché etoile rose
       if (i <= rating) {
-        stars.push(<img key={i} src={StarActive} alt="icône note étoile" className='star'/>);
+        stars.push(
+        <img 
+          key={i} 
+          src={StarActive} 
+          alt="icône note étoile" 
+          className='star'/>);
       } else {
-        stars.push(<img key={i} src={StarInactive} alt="icône note étoile" className='star'/>);
+        // Si i est supérieur à la rating, affiché etoile grise
+        stars.push(
+        <img 
+          key={i} 
+          src={StarInactive} 
+          alt="icône note étoile" 
+          className='star'
+        />);
       }
     }
     return stars;
